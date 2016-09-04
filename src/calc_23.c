@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdlib.h>     /* srand, rand */
 #include <stdbool.h>
+#include <string.h> /* memset */
 
 unsigned short randomInt(unsigned short min, unsigned short max);
 bool isValueInArray(short val, short *arr, short size);
@@ -41,7 +42,6 @@ int main(void) {
 
     return 0;
 }
-
 
 unsigned short randomInt(unsigned short min, unsigned short max) {
     return min + rand() % (max - min);
