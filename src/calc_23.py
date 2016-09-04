@@ -2,7 +2,7 @@ from random import randint
 from time import time
 
 count = 0
-TOTAL = 10000
+TOTAL = 100000
 MAX_PEOPLE = 23
 
 start = time()
