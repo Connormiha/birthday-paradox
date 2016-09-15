@@ -5,7 +5,7 @@
 #include <string.h> /* memset */
 
 unsigned short randomInt(unsigned short min, unsigned short max);
-bool isValueInArray(short val, short *arr, short size);
+bool isValueInArray(short val, const short *arr, short size);
 
 int main(void) {
     const unsigned int TOTAL = 1e5;
@@ -19,8 +19,9 @@ int main(void) {
 
     clock_t t = clock();
 
+    short days[MAX_PEOPLE];
+
     for (unsigned int i = 0; i < TOTAL; i++) {
-        short days[MAX_PEOPLE];
         memset(days, 0, sizeof(days));
 
         for (short j = 0; j < MAX_PEOPLE; j++) {
@@ -48,7 +49,7 @@ unsigned short randomInt(unsigned short min, unsigned short max) {
     //return max + rand() / (RAND_MAX / (min - max + 1) + 1);
 }
 
-bool isValueInArray(short val, short *arr, short size){
+bool isValueInArray(short val, const short *arr, short size){
     for (short i = 0; i < size; i++) {
         if (arr[i] == val)
             return true;
